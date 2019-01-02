@@ -1,0 +1,14 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.block {
+  display: block;
+}
+.margin-y-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.bg-gray { 
+  background-color: $gray; 
+}

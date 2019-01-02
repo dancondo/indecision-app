@@ -1,0 +1,30 @@
+.button {
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+}
+.button__main {
+  background-color: $main;
+  color: white;
+  font-weight: bolder;
+  border-bottom: .6rem solid darken($main, 5%);
+  &:hover {
+    background-color: $main-darker;
+  }
+  &:disabled {
+    opacity: .5;
+    &:hover {
+      cursor: auto;
+      background-color: $main;
+    }
+  }
+}
+.button__link {
+  background-color: inherit;
+  color: $main-lighter;
+}
+.button__lg {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 2rem;
+}

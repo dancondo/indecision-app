@@ -4,6 +4,7 @@ import Action from './Action';
 import AddOption from './addOption.js';
 import Options from './Options.js';
 import OptionModal from './OptionModal.js';
+import './../styles/index.scss'
 
 export default class IndecisionApp extends React.Component {
   state = {

@@ -1,0 +1,11 @@
+.add-option {
+  display: flex;
+  padding: .5rem;
+  input {
+    flex-grow: 1;
+    border: none;
+  }
+  .button {
+    margin-left: .5rem;
+  }
+}
