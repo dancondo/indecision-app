@@ -2,6 +2,16 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -95,36 +105,36 @@ var IndecisionApp = function (_React$Component) {
         title: 'Indecision App',
         subtitle: 'Put your life in the hands of a computer'
       };
-      return React.createElement(
+      return _react2.default.createElement(
         'div',
         null,
-        React.createElement(Header, { title: app.title, subtitle: app.subtitle }),
-        React.createElement(Action, {
+        _react2.default.createElement(Header, { title: app.title, subtitle: app.subtitle }),
+        _react2.default.createElement(Action, {
           hasOptions: this.state.options.length > 0,
           handlePick: this.handlePick }),
-        React.createElement(Options, {
+        _react2.default.createElement(Options, {
           options: this.state.options,
           handleDeleteOptions: this.handleDeleteOptions,
           handleDeleteOption: this.handleDeleteOption }),
-        React.createElement(AddOption, {
+        _react2.default.createElement(AddOption, {
           handleAddOption: this.handleAddOption })
       );
     }
   }]);
 
   return IndecisionApp;
-}(React.Component);
+}(_react2.default.Component);
 
 var Header = function Header(props) {
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     null,
-    React.createElement(
+    _react2.default.createElement(
       'h1',
       null,
       props.title
     ),
-    props.subtitle && React.createElement(
+    props.subtitle && _react2.default.createElement(
       'p',
       null,
       props.subtitle
@@ -137,10 +147,10 @@ Header.defaultProps = {
 };
 
 var Action = function Action(props) {
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     null,
-    React.createElement(
+    _react2.default.createElement(
       'button',
       {
         disabled: !props.hasOptions,
@@ -151,21 +161,21 @@ var Action = function Action(props) {
 };
 
 var Options = function Options(props) {
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     null,
-    React.createElement(
+    _react2.default.createElement(
       'button',
       { onClick: props.handleDeleteOptions },
       'Remove All'
     ),
-    props.options.length === 0 && React.createElement(
+    props.options.length === 0 && _react2.default.createElement(
       'p',
       null,
       'No data inputed yet'
     ),
     props.options.map(function (option) {
-      return React.createElement(Option, {
+      return _react2.default.createElement(Option, {
         key: option,
         text: option,
         handleDeleteOption: props.handleDeleteOption });
@@ -174,11 +184,11 @@ var Options = function Options(props) {
 };
 
 var Option = function Option(props) {
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     null,
     props.text,
-    React.createElement(
+    _react2.default.createElement(
       'button',
       {
         onClick: function onClick(e) {
@@ -218,19 +228,19 @@ var AddOption = function (_React$Component2) {
   }, {
     key: 'render',
     value: function render() {
-      return React.createElement(
+      return _react2.default.createElement(
         'div',
         null,
-        this.state.error && React.createElement(
+        this.state.error && _react2.default.createElement(
           'p',
           null,
           this.state.error
         ),
-        React.createElement(
+        _react2.default.createElement(
           'form',
           { onSubmit: this.handleAddOption },
-          React.createElement('input', { name: 'option' }),
-          React.createElement(
+          _react2.default.createElement('input', { name: 'option' }),
+          _react2.default.createElement(
             'button',
             { type: 'submit' },
             'Submit'
@@ -241,6 +251,6 @@ var AddOption = function (_React$Component2) {
   }]);
 
   return AddOption;
-}(React.Component);
+}(_react2.default.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+_reactDom2.default.render(_react2.default.createElement(IndecisionApp, null), document.getElementById('app'));
